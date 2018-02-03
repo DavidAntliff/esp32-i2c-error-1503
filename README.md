@@ -140,12 +140,12 @@ Note that this crash occurs before the code reaches the "Scan" function, so it i
 
 ## Boards
 
-I have been able to reproduce this on two ESP32 boards:
+I have been able to reproduce this on three ESP32 boards:
 
-* "DOIT" board from [AliExpress](https://www.aliexpress.com/item/ESP-32-ESP-32S-Development-Board-WiFi-Bluetooth-Ultra-Low-Power-Consumption-Dual-Cores-ESP32-Board/32797883648.html)
-* Wemos LoLin32 Lite from [AliExpress](https://www.aliexpress.com/item/WEMOS-LOLIN32-Lite-V1-0-0-wifi-bluetooth-board-based-ESP-32-esp32-Rev1-MicroPython-4MB/32831394824.html)
+* Two "DOIT" boards from [AliExpress](https://www.aliexpress.com/item/ESP-32-ESP-32S-Development-Board-WiFi-Bluetooth-Ultra-Low-Power-Consumption-Dual-Cores-ESP32-Board/32797883648.html)
+* One Wemos LoLin32 Lite from [AliExpress](https://www.aliexpress.com/item/WEMOS-LOLIN32-Lite-V1-0-0-wifi-bluetooth-board-based-ESP-32-esp32-Rev1-MicroPython-4MB/32831394824.html)
 
-The issue is much easier to reproduce with the DOIT board, and often occurs within a minute of repeatedly shorting SDA and SCL.
+The issue is much easier to reproduce with the DOIT boards, and often occurs within a minute of repeatedly shorting SDA and SCL.
 
 The LoLin32 Lite board seems much more stable in this regard and it is more difficult to get the issue to occur. I found it effective to put a [GY-2561](https://www.aliexpress.com/item/Free-Shipping-1pcs-GY-2561-TSL2561-Luminosity-Sensor-Breakout-infrared-Light-Sensor-module-integrating-sensor-AL/32640401005.html) on the end of a 5 metre Ethernet cable (SDA and SCL paired with ground) and attach this to the ESP32's pin 18 and 19 as normal.
 

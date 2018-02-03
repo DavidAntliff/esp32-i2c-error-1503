@@ -46,7 +46,7 @@ the same place twice in a row. It moves around a lot, and might suggest memory c
 
 It is also interesting to note that many times after the initial crash, the ESP32 will reboot but then crash immediately when calling `i2c_driver_install`. This occurs over and over until power is removed or the reset button on the board is pressed.
 
-A workaround for this seems to be to add a call to `i2c_hw_fsm_reset(i2c_num)` at the beginning of `i2c_driver_install` so that any previous I2C crash caused by a frozen hardware state machine can be cleared. With this workaround in place, the ESP32 does not continually crash.
+A workaround for this seems to be to add a call to `i2c_hw_fsm_reset(i2c_num)` at the beginning of `i2c_driver_install` so that any previous I2C crash caused by a frozen hardware state machine can be cleared. With this workaround in place, the ESP32 does not continually crash after the initial crash, but it will still crash the first time.
 
 
 ## How To Reproduce
